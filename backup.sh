@@ -22,7 +22,7 @@ echo "$targetDirectory"
 echo "$destinationDirectory"
 
 # [TASK 3]
-currentTS=$(date +%S)
+currentTS=$(date +%s)
 
 # [TASK 4]
 backupFileName="backup-[$currentTS].tar.gz"
@@ -35,14 +35,15 @@ backupFileName="backup-[$currentTS].tar.gz"
 # To make things easier, we will define some useful variables...
 
 # [TASK 5]
-origAbsPath=`/home/project`
+origAbsPath=`pwd`
 
 # [TASK 6]
-cd destDirAbsPath=`/proc/167/ns`
+cd $destinationDirectory
+destDirAbsPath=`pwd`
 
 # [TASK 7]
-cd targetDirectory
-cd targetDirectory # <-
+cd $origAbsPath
+cd $targetDirectory
 
 # [TASK 8]
 yesterdayTS=$((currentTS - 24 * 60 * 60))
